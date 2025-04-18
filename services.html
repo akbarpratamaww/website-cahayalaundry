@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan - Cahaya Laundry</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #E8F5E9;
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #4CAF50;
+        }
+        .navbar {
+            background-color: #FFFFFF;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-brand {
+            color: #4CAF50 !important;
+            font-weight: 600;
+        }
+        .navbar-toggler {
+            border: none;
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(76, 175, 80, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        .offcanvas {
+            width: 250px;
+            background-color: #FFFFFF;
+            transition: transform 0.3s ease-in-out;
+        }
+        .offcanvas-end {
+            transform: translateX(100%);
+        }
+        .offcanvas-end.show {
+            transform: translateX(0);
+        }
+        .nav-link {
+            color: #FFFFFF !important;
+            background-color: #4CAF50;
+            padding: 8px 16px !important;
+            margin: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            text-align: center;
+            display: block;
+        }
+        .nav-link:hover {
+            background-color: #81C784 !important;
+        }
+        .nav-link.active {
+            background-color: #81C784 !important;
+        }
+        .btn-primary {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+        }
+        .btn-primary:hover {
+            background-color: #81C784;
+            border-color: #81C784;
+        }
+        footer {
+            background-color: #FFFFFF;
+            color: #4CAF50;
+            padding: 40px 0;
+        }
+        .service-card {
+            transition: transform 0.3s;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #4CAF50;
+            border-radius: 50%;
+        }
+        @media (max-width: 767px) {
+            .carousel-inner .carousel-item > div {
+                display: none;
+            }
+            .carousel-inner .carousel-item > div:first-child {
+                display: block;
+            }
+        }
+        .carousel-inner .carousel-item.active,
+        .carousel-inner .carousel-item-next,
+        .carousel-inner .carousel-item-prev {
+            display: flex;
+        }
+        @media (min-width: 768px) {
+            .carousel-inner .carousel-item-end.active,
+            .carousel-inner .carousel-item-next {
+                transform: translateX(33.33%);
+            }
+            .carousel-inner .carousel-item-start.active,
+            .carousel-inner .carousel-item-prev {
+                transform: translateX(-33.33%);
+            }
+        }
+        .carousel-inner .carousel-item-end,
+        .carousel-inner .carousel-item-start {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Cahaya Laundry</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" id="navbarNav">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" style="color: #4CAF50;">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">Tentang</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="services.html">Layanan</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pricing.html">Harga</a></li>
+                        <li class="nav-item"><a class="nav-link" href="booking.html">Pesan</a></li>
+                        <li class="nav-item"><a class="nav-link" href="orders.html">Daftar Pesanan</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Section -->
+    <section class="container my-5">
+        <h2 class="text-center mb-5">Layanan Kami</h2>
+        <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <!-- Item 1: Cuci Basah, Cuci Kering, Cuci Setrika -->
+                <div class="carousel-item active">
+                    <div class="col-md-4">
+                        <div class="card service-card text-center">
+                            <img src="assets/cucibasah.jpg" class="card-img-top" alt="Cuci Basah">
+                            <div class="card-body">
+                                <h4 class="card-title">Cuci Basah</h4>
+                                <p class="card-text">Layanan cuci basah untuk pakaian sehari-hari dengan deterjen ramah lingkungan.</p>
+                                <a href="booking.html" class="btn btn-primary mt-3">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card service-card text-center">
+                            <img src="assets/cuci kering.jpg" class="card-img-top" alt="Cuci Kering">
+                            <div class="card-body">
+                                <h4 class="card-title">Cuci Kering</h4>
+                                <p class="card-text">Pembersihan pakaian khusus tanpa air, cocok untuk bahan sensitif.</p>
+                                <a href="booking.html" class="btn btn-primary mt-3">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card service-card text-center">
+                            <img src="assets/cuci-setrika-wangi.jpg" class="card-img-top" alt="Cuci Setrika">
+                            <div class="card-body">
+                                <h4 class="card-title">Cuci Setrika</h4>
+                                <p class="card-text">Cuci dan setrika pakaian Anda agar siap pakai dengan rapi.</p>
+                                <a href="booking.html" class="btn btn-primary mt-3">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 2: Setrika, Cuci Sprei, Cuci Boneka -->
+                <div class="carousel-item">
+                    <div class="col-md-4">
+                        <div class="card service-card text-center">
+                            <img src="assets/setrika34.jpg" class="card-img-top" alt="Setrika">
+                            <div class="card-body">
+                                <h4 class="card-title">Setrika</h4>
+                                <p class="card-text">Layanan setrika saja untuk pakaian yang sudah dicuci, rapi maksimal.</p>
+                                <a href="booking.html" class="btn btn-primary mt-3">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card service-card text-center">
+                            <img src="assets/cara-mencuci-dan-merawat-sprei-katun-bahan-katun.jpg" class="card-img-top" alt="Cuci Sprei">
+                            <div class="card-body">
+                                <h4 class="card-title">Cuci Sprei</h4>
+                                <p class="card-text">Pembersihan sprei dan bed cover agar tetap bersih dan wangi.</p>
+                                <a href="booking.html" class="btn btn-primary mt-3">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card service-card text-center">
+                            <img src="assets/boneka.jpg" class="card-img-top" alt="Cuci Boneka">
+                            <div class="card-body">
+                                <h4 class="card-title">Cuci Boneka</h4>
+                                <p class="card-text">Cuci boneka kesayangan dengan perawatan khusus agar tetap lembut.</p>
+                                <a href="booking.html" class="btn btn-primary mt-3">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3: Cuci Karpet -->
+                <div class="carousel-item">
+                    <div class="col-md-4">
+                        <div class="card service-card text-center">
+                            <img src="assets/Cuci-Karpet-Tangerang-Selatan.jpg" class="card-img-top" alt="Cuci Karpet">
+                            <div class="card-body">
+                                <h4 class="card-title">Cuci Karpet</h4>
+                                <p class="card-text">Layanan cuci karpet untuk menghilangkan debu dan kotoran secara mendalam.</p>
+                                <a href="booking.html" class="btn btn-primary mt-3">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p class="mt-4">© 2025 Cahaya Laundry. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.querySelector('#servicesCarousel');
+            const items = carousel.querySelectorAll('.carousel-item');
+            items.forEach((el) => {
+                const minPerSlide = 3;
+                let next = el.nextElementSibling;
+                for (let i = 1; i < minPerSlide; i++) {
+                    if (!next) {
+                        next = items[0];
+                    }
+                    let cloneChild = next.cloneNode(true);
+                    el.appendChild(cloneChild.children[0]);
+                    next = next.nextElementSibling;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
